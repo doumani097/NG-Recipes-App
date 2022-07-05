@@ -1,0 +1,23 @@
+<div class="card">
+    <img [src]="recipeDetail.imagePath" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{recipeDetail.name}}</h5>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+          Manage Recipe
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <button class="dropdown-item" (click)="ToShoppingList()">To Shopping List</button>
+          <button class="dropdown-item" (click)="EditNavigation(recipeDetail.id)">Edit Recipe</button>
+          <a class="dropdown-item" (click)="DeleteRecipe(recipeDetail.id)">Delete Recipe</a>
+        </div>
+      </div>
+      <p class="card-text">{{recipeDetail.description}}</p>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let ingrediant of recipeDetail.ingrediants">
+          <span class="float-left">{{ ingrediant.name }}</span>
+          <span class="float-right">{{ ingrediant.amount }}</span>
+        </li>
+      </ul>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<hr>
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <app-shopping-edit></app-shopping-edit>
+    </div>
+    <div class="col-md-12">
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action" (click)="onEdit(ingrediant.id)" *ngFor="let ingrediant of ingrediants">
+                <span class="float-left">{{ingrediant.name}}</span>
+                <span class="float-right">{{ingrediant.amount}}</span>
+            </a>
+        </div>
+    </div>
+</div>

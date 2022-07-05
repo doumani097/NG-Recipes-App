@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-row">
+      <div class="col">
+        <input 
+        type="number" 
+        class="form-control" 
+        placeholder="ID"
+        name="id"
+        ngModel
+        required
+        >
+      </div>
+      <div class="col">
+        <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Name"
+        name="name"
+        ngModel
+        required
+        >
+      </div>
+      <div class="col">
+        <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Amount"
+        name="amount"
+        ngModel
+        required
+        >
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-primary mr-1" [disabled]="f.invalid">{{ editMode ? 'Update' : 'Add' }}</button>
+        <button type="button" class="btn btn-danger mr-1" (click)="onDelete()" *ngIf="editMode">Delete</button>
+        <button type="button" class="btn btn-info" (click)="onClear()" [disabled]="!f.touched">Clear</button>
+      </div>
+    </div>
+</form>

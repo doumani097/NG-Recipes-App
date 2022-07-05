@@ -1,0 +1,3 @@
+<a class="btn btn-success" (click)="OnNavigate()">Add New Recipe</a>
+<hr/>
+<app-recipe-item *ngFor="let recipe of recipes" [recipeItem]="recipe"></app-recipe-item>
